@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { LogoMark } from "@/components/Logo";
 import { ArrowRight, MapPin, ShieldCheck, Phone } from "lucide-react";
+import logo from "@/assets/awahealth-logo.jpeg";
 
 export const Route = createFileRoute("/onboarding")({
   head: () => ({ meta: [{ title: "Get started — AwaHealth" }] }),
@@ -24,7 +25,7 @@ function Onboarding() {
         }} />
         <div className="relative">
           <div className="flex items-center gap-2.5">
-            <img src="/src/assets/awahealth-logo.jpeg" alt="" className="h-10 w-10 rounded-lg" />
+            <img src={logo} alt="" className="h-10 w-10 rounded-lg" />
             <div>
               <div className="font-display text-lg font-bold">AwaHealth</div>
               <div className="text-[10px] uppercase tracking-[0.18em] opacity-70">By Cytobiz</div>

@@ -12,6 +12,7 @@ import {
   SidebarFooter,
 } from "@/components/ui/sidebar";
 import { LogoMark } from "@/components/Logo";
+import logo from "@/assets/awahealth-logo.jpeg";
 import {
   Home, Hospital, Pill, FlaskConical, Stethoscope, Siren,
   History, User, ShieldCheck, Building2, LayoutDashboard,
@@ -42,7 +43,7 @@ export function AppSidebar() {
       <SidebarHeader className="border-b border-sidebar-border bg-sidebar p-3">
         <Link to="/app" className="flex items-center gap-2.5">
           <img
-            src="/src/assets/awahealth-logo.jpeg"
+            src={logo}
             alt=""
             className="h-9 w-9 rounded-md object-cover ring-2 ring-sidebar-primary/30"
           />
