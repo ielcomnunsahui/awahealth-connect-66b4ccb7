@@ -9,12 +9,37 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ProviderRouteImport } from './routes/provider'
 import { Route as OnboardingRouteImport } from './routes/onboarding'
+import { Route as AppRouteImport } from './routes/app'
+import { Route as AdminRouteImport } from './routes/admin'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AppIndexRouteImport } from './routes/app.index'
+import { Route as AppPharmaciesRouteImport } from './routes/app.pharmacies'
+import { Route as AppLabsRouteImport } from './routes/app.labs'
+import { Route as AppHospitalsRouteImport } from './routes/app.hospitals'
+import { Route as AppHistoryRouteImport } from './routes/app.history'
+import { Route as AppEmergencyRouteImport } from './routes/app.emergency'
+import { Route as AppDoctorRouteImport } from './routes/app.doctor'
 
+const ProviderRoute = ProviderRouteImport.update({
+  id: '/provider',
+  path: '/provider',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const OnboardingRoute = OnboardingRouteImport.update({
   id: '/onboarding',
   path: '/onboarding',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppRoute = AppRouteImport.update({
+  id: '/app',
+  path: '/app',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -22,40 +47,164 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AppIndexRoute = AppIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppPharmaciesRoute = AppPharmaciesRouteImport.update({
+  id: '/pharmacies',
+  path: '/pharmacies',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppLabsRoute = AppLabsRouteImport.update({
+  id: '/labs',
+  path: '/labs',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppHospitalsRoute = AppHospitalsRouteImport.update({
+  id: '/hospitals',
+  path: '/hospitals',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppHistoryRoute = AppHistoryRouteImport.update({
+  id: '/history',
+  path: '/history',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppEmergencyRoute = AppEmergencyRouteImport.update({
+  id: '/emergency',
+  path: '/emergency',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppDoctorRoute = AppDoctorRouteImport.update({
+  id: '/doctor',
+  path: '/doctor',
+  getParentRoute: () => AppRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/app': typeof AppRouteWithChildren
   '/onboarding': typeof OnboardingRoute
+  '/provider': typeof ProviderRoute
+  '/app/doctor': typeof AppDoctorRoute
+  '/app/emergency': typeof AppEmergencyRoute
+  '/app/history': typeof AppHistoryRoute
+  '/app/hospitals': typeof AppHospitalsRoute
+  '/app/labs': typeof AppLabsRoute
+  '/app/pharmacies': typeof AppPharmaciesRoute
+  '/app/': typeof AppIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
   '/onboarding': typeof OnboardingRoute
+  '/provider': typeof ProviderRoute
+  '/app/doctor': typeof AppDoctorRoute
+  '/app/emergency': typeof AppEmergencyRoute
+  '/app/history': typeof AppHistoryRoute
+  '/app/hospitals': typeof AppHospitalsRoute
+  '/app/labs': typeof AppLabsRoute
+  '/app/pharmacies': typeof AppPharmaciesRoute
+  '/app': typeof AppIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/app': typeof AppRouteWithChildren
   '/onboarding': typeof OnboardingRoute
+  '/provider': typeof ProviderRoute
+  '/app/doctor': typeof AppDoctorRoute
+  '/app/emergency': typeof AppEmergencyRoute
+  '/app/history': typeof AppHistoryRoute
+  '/app/hospitals': typeof AppHospitalsRoute
+  '/app/labs': typeof AppLabsRoute
+  '/app/pharmacies': typeof AppPharmaciesRoute
+  '/app/': typeof AppIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/onboarding'
+  fullPaths:
+    | '/'
+    | '/admin'
+    | '/app'
+    | '/onboarding'
+    | '/provider'
+    | '/app/doctor'
+    | '/app/emergency'
+    | '/app/history'
+    | '/app/hospitals'
+    | '/app/labs'
+    | '/app/pharmacies'
+    | '/app/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/onboarding'
-  id: '__root__' | '/' | '/onboarding'
+  to:
+    | '/'
+    | '/admin'
+    | '/onboarding'
+    | '/provider'
+    | '/app/doctor'
+    | '/app/emergency'
+    | '/app/history'
+    | '/app/hospitals'
+    | '/app/labs'
+    | '/app/pharmacies'
+    | '/app'
+  id:
+    | '__root__'
+    | '/'
+    | '/admin'
+    | '/app'
+    | '/onboarding'
+    | '/provider'
+    | '/app/doctor'
+    | '/app/emergency'
+    | '/app/history'
+    | '/app/hospitals'
+    | '/app/labs'
+    | '/app/pharmacies'
+    | '/app/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdminRoute: typeof AdminRoute
+  AppRoute: typeof AppRouteWithChildren
   OnboardingRoute: typeof OnboardingRoute
+  ProviderRoute: typeof ProviderRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/provider': {
+      id: '/provider'
+      path: '/provider'
+      fullPath: '/provider'
+      preLoaderRoute: typeof ProviderRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/onboarding': {
       id: '/onboarding'
       path: '/onboarding'
       fullPath: '/onboarding'
       preLoaderRoute: typeof OnboardingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app': {
+      id: '/app'
+      path: '/app'
+      fullPath: '/app'
+      preLoaderRoute: typeof AppRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -65,13 +214,97 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/app/': {
+      id: '/app/'
+      path: '/'
+      fullPath: '/app/'
+      preLoaderRoute: typeof AppIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/pharmacies': {
+      id: '/app/pharmacies'
+      path: '/pharmacies'
+      fullPath: '/app/pharmacies'
+      preLoaderRoute: typeof AppPharmaciesRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/labs': {
+      id: '/app/labs'
+      path: '/labs'
+      fullPath: '/app/labs'
+      preLoaderRoute: typeof AppLabsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/hospitals': {
+      id: '/app/hospitals'
+      path: '/hospitals'
+      fullPath: '/app/hospitals'
+      preLoaderRoute: typeof AppHospitalsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/history': {
+      id: '/app/history'
+      path: '/history'
+      fullPath: '/app/history'
+      preLoaderRoute: typeof AppHistoryRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/emergency': {
+      id: '/app/emergency'
+      path: '/emergency'
+      fullPath: '/app/emergency'
+      preLoaderRoute: typeof AppEmergencyRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/doctor': {
+      id: '/app/doctor'
+      path: '/doctor'
+      fullPath: '/app/doctor'
+      preLoaderRoute: typeof AppDoctorRouteImport
+      parentRoute: typeof AppRoute
+    }
   }
 }
 
+interface AppRouteChildren {
+  AppDoctorRoute: typeof AppDoctorRoute
+  AppEmergencyRoute: typeof AppEmergencyRoute
+  AppHistoryRoute: typeof AppHistoryRoute
+  AppHospitalsRoute: typeof AppHospitalsRoute
+  AppLabsRoute: typeof AppLabsRoute
+  AppPharmaciesRoute: typeof AppPharmaciesRoute
+  AppIndexRoute: typeof AppIndexRoute
+}
+
+const AppRouteChildren: AppRouteChildren = {
+  AppDoctorRoute: AppDoctorRoute,
+  AppEmergencyRoute: AppEmergencyRoute,
+  AppHistoryRoute: AppHistoryRoute,
+  AppHospitalsRoute: AppHospitalsRoute,
+  AppLabsRoute: AppLabsRoute,
+  AppPharmaciesRoute: AppPharmaciesRoute,
+  AppIndexRoute: AppIndexRoute,
+}
+
+const AppRouteWithChildren = AppRoute._addFileChildren(AppRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdminRoute: AdminRoute,
+  AppRoute: AppRouteWithChildren,
   OnboardingRoute: OnboardingRoute,
+  ProviderRoute: ProviderRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
