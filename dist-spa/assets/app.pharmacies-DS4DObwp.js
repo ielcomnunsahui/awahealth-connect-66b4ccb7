@@ -1,0 +1,1 @@
+import{j as e,P as a}from"./index-28Vfapb2.js";const t=()=>e.jsx(a,{type:"pharmacy",title:"Find a Pharmacy",subtitle:"Verified pharmacies — compare prices and check availability before you go."});export{t as component};
