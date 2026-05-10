@@ -12,7 +12,30 @@ export function ProviderCard({
   onAction?: () => void;
 }) {
   return (
-    <div className="group relative flex flex-col gap-4 rounded-2xl border bg-card p-5 shadow-card transition-all hover:-translate-y-0.5 hover:shadow-elevated">
+    <div className="group relative flex flex-col overflow-hidden rounded-2xl border bg-card shadow-card transition-all hover:-translate-y-0.5 hover:shadow-elevated">
+      {provider.image && (
+        <div className="relative h-40 w-full overflow-hidden bg-muted">
+          <img
+            src={provider.image}
+            alt={provider.name}
+            loading="lazy"
+            width={768}
+            height={512}
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+          <span
+            className={
+              "absolute right-3 top-3 rounded-full px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider backdrop-blur " +
+              (provider.open
+                ? "bg-success/90 text-success-foreground"
+                : "bg-destructive/90 text-destructive-foreground")
+            }
+          >
+            {provider.open ? "Open now" : "Closed"}
+          </span>
+        </div>
+      )}
+      <div className="flex flex-col gap-4 p-5">
       <div className="flex items-start justify-between gap-3">
         <div className="flex items-center gap-3">
           <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10 font-display text-lg font-bold text-accent">
