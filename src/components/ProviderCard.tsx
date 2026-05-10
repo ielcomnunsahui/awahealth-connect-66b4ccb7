@@ -103,13 +103,32 @@ export function ProviderCard({
           </div>
         </div>
         <div className="flex gap-2">
-          <Button variant="outline" size="sm">
-            <Navigation className="h-4 w-4" /> Navigate
-          </Button>
-          <Button size="sm" onClick={onAction} className="bg-teal-gradient text-accent-foreground hover:opacity-90">
-            {primaryAction}
-          </Button>
+          <a
+            href={
+              provider.lat && provider.lng
+                ? `https://www.google.com/maps/dir/?api=1&destination=${provider.lat},${provider.lng}`
+                : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(provider.name + " " + provider.address)}`
+            }
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button variant="outline" size="sm">
+              <Navigation className="h-4 w-4" /> Navigate
+            </Button>
+          </a>
+          {provider.phone ? (
+            <a href={`tel:${provider.phone}`}>
+              <Button size="sm" className="bg-teal-gradient text-accent-foreground hover:opacity-90">
+                {primaryAction}
+              </Button>
+            </a>
+          ) : (
+            <Button size="sm" onClick={onAction} className="bg-teal-gradient text-accent-foreground hover:opacity-90">
+              {primaryAction}
+            </Button>
+          )}
         </div>
+      </div>
       </div>
     </div>
   );
