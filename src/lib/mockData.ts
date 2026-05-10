@@ -1,3 +1,10 @@
+import abicareImg from "@/assets/hospitals/abicare.jpg";
+import anchormedImg from "@/assets/hospitals/anchormed.jpg";
+import crescentImg from "@/assets/hospitals/crescent.jpg";
+import ajifatImg from "@/assets/hospitals/ajifat.jpg";
+import pentacareImg from "@/assets/hospitals/pentacare.jpg";
+import ibnaduaImg from "@/assets/hospitals/ibnadua.jpg";
+
 export type Provider = {
   id: string;
   name: string;
@@ -11,18 +18,26 @@ export type Provider = {
   verified: boolean;
   address: string;
   specialties: string[];
+  image?: string;
+  phone?: string;
+  lat?: number;
+  lng?: number;
 };
 
+// Hospitals near University of Ilorin (Tanke), Kwara State
 export const providers: Provider[] = [
-  { id: "p1", name: "Ajifat Medical Centre", type: "hospital", distance: 1.2, rating: 4.6, reviews: 312, fee: 8000, waitTime: "10 min", open: true, verified: true, address: "12 Allen Ave, Ikeja", specialties: ["General", "Pediatrics", "Cardiology"] },
-  { id: "p2", name: "Reddington Hospital", type: "hospital", distance: 2.8, rating: 4.8, reviews: 890, fee: 15000, waitTime: "20 min", open: true, verified: true, address: "Victoria Island, Lagos", specialties: ["Surgery", "Oncology", "ER"] },
-  { id: "p3", name: "Lagoon Hospital", type: "hospital", distance: 3.4, rating: 4.5, reviews: 540, fee: 12000, waitTime: "15 min", open: true, verified: true, address: "Apapa, Lagos", specialties: ["General", "Maternity"] },
-  { id: "p4", name: "HealthPlus Pharmacy", type: "pharmacy", distance: 0.6, rating: 4.7, reviews: 230, fee: 0, waitTime: "Walk-in", open: true, verified: true, address: "Opebi Rd, Ikeja", specialties: ["Prescription", "OTC", "Wellness"] },
-  { id: "p5", name: "MedPlus Pharmacy", type: "pharmacy", distance: 1.1, rating: 4.4, reviews: 180, fee: 0, waitTime: "Walk-in", open: true, verified: true, address: "Awolowo Way", specialties: ["Prescription", "Delivery"] },
-  { id: "p6", name: "Emzor Pharmacy", type: "pharmacy", distance: 2.0, rating: 4.2, reviews: 95, fee: 0, waitTime: "Walk-in", open: false, verified: true, address: "Maryland Mall", specialties: ["Prescription", "OTC"] },
-  { id: "p7", name: "Synlab Diagnostics", type: "lab", distance: 1.4, rating: 4.7, reviews: 410, fee: 5000, waitTime: "5 min", open: true, verified: true, address: "Adeniyi Jones, Ikeja", specialties: ["Blood Test", "Imaging", "PCR"] },
-  { id: "p8", name: "Clinix Healthcare Lab", type: "lab", distance: 2.3, rating: 4.5, reviews: 220, fee: 3500, waitTime: "10 min", open: true, verified: true, address: "Surulere", specialties: ["Hematology", "Urinalysis"] },
-  { id: "p9", name: "Bridge Clinic Lab", type: "lab", distance: 4.0, rating: 4.6, reviews: 150, fee: 7000, waitTime: "30 min", open: true, verified: false, address: "Lekki Phase 1", specialties: ["Fertility", "Genetics"] },
+  { id: "p1", name: "Abicare Hospital", type: "hospital", distance: 0.8, rating: 4.7, reviews: 312, fee: 6000, waitTime: "10 min", open: true, verified: true, address: "1 Peace St, off Awolowo Rd, Tanke, Ilorin", specialties: ["General", "Pediatrics", "24/7 ER"], image: abicareImg, phone: "+2348145233454", lat: 8.4528, lng: 4.6011 },
+  { id: "p2", name: "Anchormed Hospital", type: "hospital", distance: 1.1, rating: 4.6, reviews: 188, fee: 7000, waitTime: "15 min", open: true, verified: true, address: "Aniyikaye Street, Tanke / Oko Erin, Ilorin", specialties: ["General", "Maternity", "24/7 ER"], image: anchormedImg, phone: "+2349069142876", lat: 8.4602, lng: 4.5898 },
+  { id: "p3", name: "Crescent GC Hospital", type: "hospital", distance: 1.4, rating: 4.5, reviews: 142, fee: 5500, waitTime: "12 min", open: true, verified: true, address: "Olufunmilayo Street, Tanke, Ilorin", specialties: ["General", "Surgery"], image: crescentImg, phone: "+2349088888988", lat: 8.4571, lng: 4.6048 },
+  { id: "p4", name: "Ajifat Medical Centre", type: "hospital", distance: 0.6, rating: 4.8, reviews: 421, fee: 8000, waitTime: "8 min", open: true, verified: true, address: "Along Unilorin P/S Road, beside Munirat Filling Station, Tanke", specialties: ["General", "Pediatrics", "Cardiology"], image: ajifatImg, phone: "+2349038690973", lat: 8.4615, lng: 4.5972 },
+  { id: "p5", name: "Pentacare Hospital", type: "hospital", distance: 1.9, rating: 4.4, reviews: 96, fee: 6500, waitTime: "20 min", open: true, verified: true, address: "Fate-Tanke Road, behind LGEA Primary School, Ilorin", specialties: ["General", "Maternity"], image: pentacareImg, phone: "+2348038086040", lat: 8.4695, lng: 4.5810 },
+  { id: "p6", name: "Ibn Adua Hospital", type: "hospital", distance: 1.2, rating: 4.6, reviews: 174, fee: 7500, waitTime: "12 min", open: true, verified: true, address: "Dr. Dele Gege Street, off Awolowo Rd, Tanke", specialties: ["General", "Surgery", "24/7 ER"], image: ibnaduaImg, phone: "+2348182953777", lat: 8.4549, lng: 4.6065 },
+  { id: "p7", name: "HealthPlus Pharmacy", type: "pharmacy", distance: 0.6, rating: 4.7, reviews: 230, fee: 0, waitTime: "Walk-in", open: true, verified: true, address: "Tanke Junction, Ilorin", specialties: ["Prescription", "OTC", "Wellness"] },
+  { id: "p8", name: "MedPlus Pharmacy", type: "pharmacy", distance: 1.1, rating: 4.4, reviews: 180, fee: 0, waitTime: "Walk-in", open: true, verified: true, address: "Unilorin Main Gate, Ilorin", specialties: ["Prescription", "Delivery"] },
+  { id: "p9", name: "Emzor Pharmacy", type: "pharmacy", distance: 2.0, rating: 4.2, reviews: 95, fee: 0, waitTime: "Walk-in", open: false, verified: true, address: "Fate Road, Ilorin", specialties: ["Prescription", "OTC"] },
+  { id: "p10", name: "Synlab Diagnostics", type: "lab", distance: 1.4, rating: 4.7, reviews: 410, fee: 5000, waitTime: "5 min", open: true, verified: true, address: "Tanke-Oke Odo Rd, Ilorin", specialties: ["Blood Test", "Imaging", "PCR"] },
+  { id: "p11", name: "Clinix Healthcare Lab", type: "lab", distance: 2.3, rating: 4.5, reviews: 220, fee: 3500, waitTime: "10 min", open: true, verified: true, address: "Taiwo Road, Ilorin", specialties: ["Hematology", "Urinalysis"] },
+  { id: "p12", name: "Bridge Clinic Lab", type: "lab", distance: 4.0, rating: 4.6, reviews: 150, fee: 7000, waitTime: "30 min", open: true, verified: false, address: "GRA, Ilorin", specialties: ["Fertility", "Genetics"] },
 ];
 
 export type Doctor = {
