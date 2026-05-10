@@ -4,6 +4,12 @@ import crescentImg from "@/assets/hospitals/crescent.jpg";
 import ajifatImg from "@/assets/hospitals/ajifat.jpg";
 import pentacareImg from "@/assets/hospitals/pentacare.jpg";
 import ibnaduaImg from "@/assets/hospitals/ibnadua.jpg";
+import healthplusImg from "@/assets/providers/healthplus.jpg";
+import medplusImg from "@/assets/providers/medplus.jpg";
+import emzorImg from "@/assets/providers/emzor.jpg";
+import synlabImg from "@/assets/providers/synlab.jpg";
+import clinixImg from "@/assets/providers/clinix.jpg";
+import bridgeImg from "@/assets/providers/bridge.jpg";
 
 export type Provider = {
   id: string;
@@ -32,12 +38,12 @@ export const providers: Provider[] = [
   { id: "p4", name: "Ajifat Medical Centre", type: "hospital", distance: 0.6, rating: 4.8, reviews: 421, fee: 8000, waitTime: "8 min", open: true, verified: true, address: "Along Unilorin P/S Road, beside Munirat Filling Station, Tanke", specialties: ["General", "Pediatrics", "Cardiology"], image: ajifatImg, phone: "+2349038690973", lat: 8.4615, lng: 4.5972 },
   { id: "p5", name: "Pentacare Hospital", type: "hospital", distance: 1.9, rating: 4.4, reviews: 96, fee: 6500, waitTime: "20 min", open: true, verified: true, address: "Fate-Tanke Road, behind LGEA Primary School, Ilorin", specialties: ["General", "Maternity"], image: pentacareImg, phone: "+2348038086040", lat: 8.4695, lng: 4.5810 },
   { id: "p6", name: "Ibn Adua Hospital", type: "hospital", distance: 1.2, rating: 4.6, reviews: 174, fee: 7500, waitTime: "12 min", open: true, verified: true, address: "Dr. Dele Gege Street, off Awolowo Rd, Tanke", specialties: ["General", "Surgery", "24/7 ER"], image: ibnaduaImg, phone: "+2348182953777", lat: 8.4549, lng: 4.6065 },
-  { id: "p7", name: "HealthPlus Pharmacy", type: "pharmacy", distance: 0.6, rating: 4.7, reviews: 230, fee: 0, waitTime: "Walk-in", open: true, verified: true, address: "Tanke Junction, Ilorin", specialties: ["Prescription", "OTC", "Wellness"] },
-  { id: "p8", name: "MedPlus Pharmacy", type: "pharmacy", distance: 1.1, rating: 4.4, reviews: 180, fee: 0, waitTime: "Walk-in", open: true, verified: true, address: "Unilorin Main Gate, Ilorin", specialties: ["Prescription", "Delivery"] },
-  { id: "p9", name: "Emzor Pharmacy", type: "pharmacy", distance: 2.0, rating: 4.2, reviews: 95, fee: 0, waitTime: "Walk-in", open: false, verified: true, address: "Fate Road, Ilorin", specialties: ["Prescription", "OTC"] },
-  { id: "p10", name: "Synlab Diagnostics", type: "lab", distance: 1.4, rating: 4.7, reviews: 410, fee: 5000, waitTime: "5 min", open: true, verified: true, address: "Tanke-Oke Odo Rd, Ilorin", specialties: ["Blood Test", "Imaging", "PCR"] },
-  { id: "p11", name: "Clinix Healthcare Lab", type: "lab", distance: 2.3, rating: 4.5, reviews: 220, fee: 3500, waitTime: "10 min", open: true, verified: true, address: "Taiwo Road, Ilorin", specialties: ["Hematology", "Urinalysis"] },
-  { id: "p12", name: "Bridge Clinic Lab", type: "lab", distance: 4.0, rating: 4.6, reviews: 150, fee: 7000, waitTime: "30 min", open: true, verified: false, address: "GRA, Ilorin", specialties: ["Fertility", "Genetics"] },
+  { id: "p7", name: "HealthPlus Pharmacy", type: "pharmacy", distance: 0.6, rating: 4.7, reviews: 230, fee: 0, waitTime: "Walk-in", open: true, verified: true, address: "Tanke Junction, Ilorin", specialties: ["Prescription", "OTC", "Wellness"], image: healthplusImg, phone: "+2348000000001", lat: 8.4583, lng: 4.6024 },
+  { id: "p8", name: "MedPlus Pharmacy", type: "pharmacy", distance: 1.1, rating: 4.4, reviews: 180, fee: 0, waitTime: "Walk-in", open: true, verified: true, address: "Unilorin Main Gate, Ilorin", specialties: ["Prescription", "Delivery"], image: medplusImg, phone: "+2348000000002", lat: 8.4641, lng: 4.6759 },
+  { id: "p9", name: "Emzor Pharmacy", type: "pharmacy", distance: 2.0, rating: 4.2, reviews: 95, fee: 0, waitTime: "Walk-in", open: false, verified: true, address: "Fate Road, Ilorin", specialties: ["Prescription", "OTC"], image: emzorImg, phone: "+2348000000003", lat: 8.4742, lng: 4.5740 },
+  { id: "p10", name: "Synlab Diagnostics", type: "lab", distance: 1.4, rating: 4.7, reviews: 410, fee: 5000, waitTime: "5 min", open: true, verified: true, address: "Tanke-Oke Odo Rd, Ilorin", specialties: ["Blood Test", "Imaging", "PCR"], image: synlabImg, phone: "+2348000000004", lat: 8.4596, lng: 4.5985 },
+  { id: "p11", name: "Clinix Healthcare Lab", type: "lab", distance: 2.3, rating: 4.5, reviews: 220, fee: 3500, waitTime: "10 min", open: true, verified: true, address: "Taiwo Road, Ilorin", specialties: ["Hematology", "Urinalysis"], image: clinixImg, phone: "+2348000000005", lat: 8.4920, lng: 4.5450 },
+  { id: "p12", name: "Bridge Clinic Lab", type: "lab", distance: 4.0, rating: 4.6, reviews: 150, fee: 7000, waitTime: "30 min", open: true, verified: false, address: "GRA, Ilorin", specialties: ["Fertility", "Genetics"], image: bridgeImg, phone: "+2348000000006", lat: 8.4796, lng: 4.5398 },
 ];
 
 export type Doctor = {
