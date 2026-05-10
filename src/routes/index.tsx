@@ -47,7 +47,7 @@ function Landing() {
           <div className="space-y-6">
             <div className="inline-flex items-center gap-2 rounded-full border bg-card px-3 py-1.5 text-xs font-medium text-muted-foreground shadow-card">
               <span className="flex h-2 w-2 rounded-full bg-success animate-pulse" />
-              Now live across Lagos, Abuja & Port Harcourt
+              Now live in Kwara, Ibadan & Lagos
             </div>
             <h1 className="font-display text-5xl font-bold leading-[1.05] tracking-tight text-balance text-primary sm:text-6xl lg:text-7xl">
               Healthcare, <span className="text-accent">made nearby.</span>
@@ -90,7 +90,7 @@ function Landing() {
             <div className="rounded-3xl border bg-card p-6 shadow-elevated">
               <div className="flex items-center gap-2 text-xs text-muted-foreground">
                 <MapPin className="h-3.5 w-3.5 text-accent" />
-                Ikeja, Lagos · 3 nearby providers
+                Tanke, Ilorin · 3 nearby providers
               </div>
               <div className="mt-4 space-y-3">
                 {[
